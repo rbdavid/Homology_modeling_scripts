@@ -33,7 +33,7 @@ v = MDAnalysis.Universe('%s' %(pdb2))			# Initialize a MDAnalysis.Universe, call
 v_selection = v.select_atoms(selection2)		# creating the AtomGroup object with the desired atom selection
 
 merged = MDAnalysis.Merge(u_selection,v_selection)	# Merge AtomGroups from the two Universes; creates a Universe with all atoms that were merged
-merged_all = merged.select_atoms('all')			# create a new AtomGroup that includes all atoms
+merged_all = merged.select_atoms('not (resname HOH and around 1.5 protein)')			# create a new AtomGroup that includes all atoms
 
 merged_all.write(output)				# write a pdb file of the merged universe
 

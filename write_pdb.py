@@ -2,6 +2,7 @@
 # ----------------------------------------
 # USAGE:
 
+# ./write_pdb.py pdb1.pdb output_file.pdb
 
 # ----------------------------------------
 # PREAMBLE:
@@ -22,7 +23,7 @@ selection = 'segid A or segid C' 	# change this selection depending on the pdb a
 # ----------------------------------------
 # MAIN PROGRAM:
 
-u = MDAnalysis.Universe('%s' %(pdb1))		# Initialize a MDAnalysis.Universe object, called u, that is the structure from pdb1
+u = MDAnalysis.Universe(pdb1)			# Initialize a MDAnalysis.Universe object, called u, that is the structure from pdb1
 u_select = u.select_atoms(selection)		# Initialize the AtomGroup object with the atoms determined from the selection variable
 
 u_select.write(output)				# Write the pdb file of the AtomGroup
