@@ -11,26 +11,19 @@ import sys
 import MDAnalysis
 from MDAnalysis.analysis.align import *
 
-pdb1 = sys.argv[1]
-output = sys.argv[2]
+pdb1 = sys.argv[1]		# pdb file with multi-mer structures
+output = sys.argv[2]		# output name for the pdb to be written
 
-#selection = 'segid A or segid C or resname HOH or resname PO4' # CORRECT THIS...
-selection = 'segid A or segid C' # CORRECT THIS...
-
-flush = sys.stdout.flush
+selection = 'segid A or segid C' 	# change this selection depending on the pdb and the chains wanted to be used in simulation
 
 # ----------------------------------------
 # SUBROUTINES:
 
-def ffprint(string):
-	print '%s' %(string)
-        flush()
-
 # ----------------------------------------
 # MAIN PROGRAM:
 
-u = MDAnalysis.Universe('%s' %(pdb1))
-u_select = u.select_atoms(selection)
+u = MDAnalysis.Universe('%s' %(pdb1))		# Initialize a MDAnalysis.Universe object, called u, that is the structure from pdb1
+u_select = u.select_atoms(selection)		# Initialize the AtomGroup object with the atoms determined from the selection variable
 
-u_select.write(output)
+u_select.write(output)				# Write the pdb file of the AtomGroup
 
