@@ -14,7 +14,8 @@ from MDAnalysis.analysis.align import *
 pdb1 = sys.argv[1]
 output = sys.argv[2]
 
-selection = 'protein and chain A' # CORRECT THIS...
+#selection = 'segid A or segid C or resname HOH or resname PO4' # CORRECT THIS...
+selection = 'segid A or segid C' # CORRECT THIS...
 
 flush = sys.stdout.flush
 
