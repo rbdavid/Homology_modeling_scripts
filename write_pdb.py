@@ -10,7 +10,6 @@
 import numpy as np
 import sys
 import MDAnalysis
-from MDAnalysis.analysis.align import *
 
 pdb1 = sys.argv[1]		# pdb file with multi-mer structures
 output = sys.argv[2]		# output name for the pdb to be written
