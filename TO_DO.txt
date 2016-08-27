@@ -1,0 +1,4 @@
+
+# TO DO FILE:
+# -- Should remove the cutoff sys.argv variable; was generally used to removed bad contacts between protein and crystallographic waters that we wanted to transfer; instead, I think that removing crystallographic waters should be done only by visual inspection of the system.
+
